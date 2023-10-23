@@ -1,0 +1,9 @@
+.link{
+    @apply font-medium text-slate-700 duration-300 hover:text-indigo-600; 
+}
+
+
+
+.link-container > a{
+    @apply text-white flex flex-col items-center justify-center text-sm;
+}
