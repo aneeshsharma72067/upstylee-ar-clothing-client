@@ -1,7 +1,8 @@
 import { StarEmptyIcon, StarFullIcon, StarHalfIcon } from "./Icons";
 
 const BannerDisplayCard = (props) => {
-  const { rating } = props;
+  const { rating, imageUrl, description } = props;
+
   const ratingFullStars = Array.from(
     { length: Math.floor(rating) },
     (_, index) => {
@@ -20,13 +21,13 @@ const BannerDisplayCard = (props) => {
     <div className="flex gap-2 max-w-[20rem] bg-white text-slate-800 p-1 rounded-lg scale-[0.6]">
       <div className="flex-[0.3] flex items-center justify-center">
         <img
-          src="/assets/images/card-image-2.jpeg"
+          src={imageUrl}
           alt="image-not-found"
-          className="w-full "
+          className="w-full aspect-square"
         />
       </div>
       <div className="flex-[0.7] flex flex-col gap-2">
-        <div>Top Gun Maverick Movie Shirt for Men</div>
+        <div>{description}</div>
         <div className="flex gap-2">
           {ratingFullStars} {rating !== Math.floor(rating) && <StarHalfIcon />}{" "}
           {ratingEmptyStars}

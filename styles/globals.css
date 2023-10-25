@@ -42,6 +42,7 @@
   --card-border-rgb: 131, 134, 135;
 
   /* Custom Variables */
+  --indigo: #4338ca;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,6 +86,20 @@
 
 html,
 body {
+}
+
+::-webkit-scrollbar{
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(69, 5, 245);
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: white;
 }
 
 body {

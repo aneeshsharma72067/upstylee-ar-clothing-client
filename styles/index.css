@@ -2,8 +2,143 @@
     @apply font-medium text-slate-700 duration-300 hover:text-indigo-600; 
 }
 
-
-
-.link-container > a{
-    @apply text-white flex flex-col items-center justify-center text-sm;
+.link-container > a, .link-container > button{
+    @apply text-slate-800 flex flex-col items-center justify-center text-sm duration-300;
 }
+
+a > svg{
+    stroke: #222;
+    transition: 300ms all;
+}
+
+.product-card{
+    transition: 300ms all;
+    cursor: pointer;
+}
+
+.product-card img{
+    transition: 300ms all;
+}
+
+.product-card:hover img{
+    scale: 1.4;
+}
+
+.brand-image-container > img{
+    @apply w-24;
+}
+
+.category-container li{
+    @apply flex gap-2 text-slate-500 text-sm
+}
+
+.size-selector > div{
+    @apply w-6 h-6 rounded-full flex items-center justify-center border border-slate-800 p-6 text-slate-800 duration-300 hover:bg-slate-800 hover:text-slate-100 cursor-pointer;
+}
+
+.size-selector > div > span{
+    @apply text-base
+}
+
+.btn-svg-stroke > svg{
+    stroke: #000030;
+    stroke-width: 2px;
+    transition: 300ms all;
+}
+
+.btn-svg-stroke:hover > svg{
+    stroke: white;
+}
+.btn-svg-fill>svg {
+    fill: #b60758;
+    stroke: #b60758;
+    stroke-width: 2px;
+    transition: 300ms all;
+}
+.btn-svg-fill->svg {
+    fill: #b60758;
+    stroke: #b60758;
+    stroke-width: 2px;
+    transition: 300ms all;
+}
+
+.btn-svg-fill:hover>svg {
+    stroke: white;
+    fill: white;
+}
+
+.btn-svg-indigo > svg{
+    stroke: #0072cf;
+    transition: 300ms all;
+}
+
+.btn-svg-indigo:hover > svg{
+    stroke: white;
+}
+
+.signup_form input{
+    @apply px-3 py-1 text-slate-900 font-medium placeholder:text-zinc-600 placeholder:font-normal text-lg outline-none border-none rounded-lg bg-slate-50
+}
+
+
+
+
+
+/* ------------- Utility Classes --------------- */
+
+
+.neuromorphism{
+    box-shadow: 16px 16px 32px #919191,
+    -16px -16px 32px #ffffff;
+}
+
+/* Gradients */
+.orange-gradient,
+.indigo-gradient,
+.red-gradient,
+.green-gradient,
+.yellow-gradient
+ {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.orange-gradient::before,
+.red-gradient::before,
+.indigo-gradient::before,
+.green-gradient::before,
+.yellow-gradient::before
+{
+    content: '';
+    z-index: -1;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 500ms;
+}
+
+.orange-gradient::before {
+    background: linear-gradient(115deg, #ff6600, #ff9147, #ff9650, white, #ff9147, #ffd0aa, white);
+}
+
+.red-gradient::before {
+    background: linear-gradient(115deg, #ff0000, #ff3737, #ff5454, white, #ff3737, #ff8d8d, white);
+}
+
+.indigo-gradient::before {
+    background: linear-gradient(115deg, #3700ff, #5223ff, #7853ff, white, #4d1cff, #7048ff, white);
+}
+
+.orange-gradient:hover::before,
+.red-gradient:hover::before,
+.indigo-gradient:hover::before,
+.yellow-gradient:hover::before,
+.green-gradient:hover::before
+{
+    left: -50%;
+}
+
+

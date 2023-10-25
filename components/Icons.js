@@ -80,6 +80,7 @@ export const StarFullIcon = ({
     width={size}
     height={size}
     fill={color}
+    stroke={color}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -132,5 +133,50 @@ export const StarEmptyIcon = ({
     {...props}
   >
     <path d="M22.5 9.75h-8.063L12 2.25l-2.438 7.5H1.5l6.563 4.5-2.532 7.5L12 17.062l6.469 4.688-2.532-7.5 6.563-4.5Z" />
+  </svg>
+);
+
+export const ArrowDownIcon = ({
+  size = iconSize,
+  strokeWidth = 1,
+  color = "#242424",
+  ...props
+}) => (
+  <svg
+    width={size}
+    height={size}
+    fill="none"
+    stroke={color}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={strokeWidth}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="m5.25 8.625 6.75 6.75 6.75-6.75" />
+  </svg>
+);
+
+export const PencilIcon = ({
+  size = iconSize,
+  strokeWidth = 1.5,
+  color = "#2e62ff",
+  ...props
+}) => (
+  <svg
+    width={size}
+    height={size}
+    fill="none"
+    stroke={color}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={strokeWidth}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="m17.069 5.875-12.99 13.02L3 21.004l2.109-1.078 13.02-12.99-1.06-1.061Z" />
+    <path d="m19.72 3.22-1.06 1.06 1.06 1.06 1.06-1.06a.75.75 0 0 0 0-1.06v0a.75.75 0 0 0-1.06 0v0Z" />
   </svg>
 );
