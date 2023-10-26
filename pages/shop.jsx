@@ -166,11 +166,12 @@ const ShoppingPage = () => {
               <h2 className="font-medium">Categories</h2>
               <div>
                 <ul className="flex flex-col gap-2 category-container ">
-                  {categories.map((category) => {
+                  {categories.map((category, index) => {
                     return (
                       <li>
                         <input
                           type="checkbox"
+                          key={index}
                           name={category}
                           className="bg-white"
                         />
@@ -185,12 +186,13 @@ const ShoppingPage = () => {
               <h2 className="font-medium">Brands</h2>
               <div>
                 <ul className="category-container flex flex-col gap-2">
-                  {brands.map((brand) => {
+                  {brands.map((brand, index) => {
                     return (
                       <li>
                         <input
+                          key={brand + Math.random()}
                           type="checkbox"
-                          name={brand}
+                          name={index}
                           className="bg-white"
                         />
                         <span>{brand}</span>
@@ -224,7 +226,7 @@ const ShoppingPage = () => {
               {productsList.map((product) => {
                 return (
                   <ProductCard
-                    key={product.id}
+                    key={product.id + `${Math.random()}`}
                     id={product.id}
                     title={product.name}
                     imageUrl={product.imageUrl}

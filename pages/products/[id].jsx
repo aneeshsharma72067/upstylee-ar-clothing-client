@@ -199,6 +199,7 @@ const ProductDetails = () => {
               width={800}
               height={800}
               className="!w-4/5 !h-auto rounded-lg"
+              alt="Image Not Found"
             />
           </div>
         </div>
@@ -259,6 +260,7 @@ const ProductDetails = () => {
               {sizes.map((size) => {
                 return (
                   <div
+                    key={size + `_${Math.random()}`}
                     onClick={(e) => setSelectedSize(size)}
                     style={
                       selectedSize === size

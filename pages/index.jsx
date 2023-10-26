@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Home() {
   const featuredProducts = [
     {
-      id: "sodfhohbnh938bqv9",
+      id: "dnnv903ntgba820n",
       name: "Kurta for Men",
       brand: "H&M",
       price: "799",
@@ -18,7 +18,7 @@ export default function Home() {
       imageUrl: "/assets/images/featured-product-1.png",
     },
     {
-      id: "iobf78qvd3198fh9",
+      id: "0vb4ai28b38gbn21",
       name: "Sapphire Blue Jacquard Kurta Set",
       brand: null,
       price: "2,999",
@@ -34,7 +34,7 @@ export default function Home() {
       imageUrl: "/assets/images/featured-product-3.png",
     },
     {
-      id: "pl10cuem6bz0m1827nv",
+      id: "2nc0n47gbp2ncmwrnp",
       name: "Anubhutee Women Mauve Ethnic Motifs Yoke Design Regular Mirror Work Kurta with Trousers",
       brand: "Anubhutee",
       price: "999",
@@ -42,7 +42,7 @@ export default function Home() {
       imageUrl: "/assets/images/featured-product-4.webp",
     },
     {
-      id: "8mxla00oc4nzuuuqbqp",
+      id: "nxcn2o4y220vbnxqoffd",
       name: "Rudraaksha Women A-line Multicolor Dress",
       brand: "Rudraaksha",
       price: "379",

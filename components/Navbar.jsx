@@ -1,9 +1,26 @@
 import Link from "next/link";
 import { BagIcon, HeartIcon, UserIcon } from "./Icons";
-import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { UserDataContext } from "@/components/UserContext";
+import axios from "axios";
 
 const Navbar = ({ onSignUpClick }) => {
-  const [user, setUser] = useState(null);
+  const { user, setUser } = useContext(UserDataContext);
+  useEffect(() => {
+    const getUser = () => {
+      axios
+        .get("/api/check-auth")
+        .then((res) => {
+          console.log(res.data);
+          setUser(res.data.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
   return (
     <div className="text-slate-900 flex px-4">
       <div className="flex flex-1">
