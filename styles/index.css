@@ -153,4 +153,37 @@ a > svg{
     left: -50%;
 }
 
+.loader {
+    width: 1014px;
+    height: 104px;
+    position: relative;
+    background-image:
+        linear-gradient(#FFF 36px, transparent 0),
+        linear-gradient(#3700ff 36px, transparent 0),
+        linear-gradient(#3700ff 36px, transparent 0),
+        linear-gradient(#FFF 36px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 36px 36px;
+    background-position: left top, left bottom, right top, right bottom;
+    animation: rotate 1s linear infinite;
+}
 
+@keyframes rotate {
+    0% {
+        width: 104px;
+        height: 104px;
+        transform: rotate(0deg)
+    }
+
+    50% {
+        width: 80px;
+        height: 80px;
+        transform: rotate(180deg)
+    }
+
+    100% {
+        width: 104px;
+        height: 104px;
+        transform: rotate(360deg)
+    }
+}

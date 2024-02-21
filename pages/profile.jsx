@@ -1,11 +1,6 @@
-import {
-  HeartIcon,
-  PencilIcon,
-  StarFullIcon,
-  UserIcon,
-} from "@/components/Icons";
+import { HeartIcon, PencilIcon, StarFullIcon, UserIcon } from "@/assets/Icons";
 import OrdersCard from "@/components/OrdersCard";
-import { UserDataContext } from "@/components/UserContext";
+import { UserDataContext } from "@/context/UserContext";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useContext } from "react";

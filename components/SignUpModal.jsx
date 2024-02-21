@@ -2,7 +2,7 @@ import { Dosis } from "next/font/google";
 import { useContext, useRef, useState } from "react";
 import Toast from "./Toast";
 import axios from "axios";
-import { UserDataContext } from "./UserContext";
+import { UserDataContext } from "../context/UserContext";
 
 const dosis = Dosis({ subsets: ["latin"], weight: "600" });
 

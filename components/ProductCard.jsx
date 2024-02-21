@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StarFullIcon } from "./Icons";
+import { StarFullIcon } from "../assets/Icons";
 
 const ProductCard = ({ id, title, rating, imageUrl, brand, price }) => {
   return (

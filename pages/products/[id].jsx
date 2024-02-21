@@ -4,7 +4,7 @@ import {
   StarEmptyIcon,
   StarFullIcon,
   StarHalfIcon,
-} from "@/components/Icons";
+} from "@/assets/Icons";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";

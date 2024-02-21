@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { BagIcon, HeartIcon, UserIcon } from "./Icons";
+import { BagIcon, HeartIcon, UserIcon } from "../assets/Icons";
 import { useContext, useEffect } from "react";
-import { UserDataContext } from "@/components/UserContext";
+import { UserDataContext } from "@/context/UserContext";
 import axios from "axios";
 
 const Navbar = ({ onSignUpClick }) => {

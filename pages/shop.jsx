@@ -223,10 +223,10 @@ const ShoppingPage = () => {
               </div>
             </div>
             <div className="flex flex-wrap gap-10 px-6 py-10">
-              {productsList.map((product) => {
+              {productsList.map((product, key) => {
                 return (
                   <ProductCard
-                    key={product.id + `${Math.random()}`}
+                    key={key}
                     id={product.id}
                     title={product.name}
                     imageUrl={product.imageUrl}

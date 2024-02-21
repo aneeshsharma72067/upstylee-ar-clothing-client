@@ -1,4 +1,4 @@
-import { StarEmptyIcon, StarFullIcon, StarHalfIcon } from "./Icons";
+import { StarEmptyIcon, StarFullIcon, StarHalfIcon } from "../assets/Icons";
 
 const BannerDisplayCard = (props) => {
   const { rating, imageUrl, description } = props;
