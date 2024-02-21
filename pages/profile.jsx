@@ -1,26 +1,29 @@
 import { HeartIcon, PencilIcon, StarFullIcon, UserIcon } from "@/assets/Icons";
 import OrdersCard from "@/components/OrdersCard";
 import { UserDataContext } from "@/context/UserContext";
-import axios from "axios";
+import { logout } from "@/services/authentication";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 
 const ProfilePage = () => {
-  const { user, setUser } = useContext(UserDataContext);
+  const { user, setUser, setLoading } = useContext(UserDataContext);
   const router = useRouter();
-  const logoutHandle = () => {
-    axios
-      .post("/api/logout")
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.message === "success") {
-          router.push("/");
-          setUser(null);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const logoutHandle = async () => {
+    setLoading(true);
+    try {
+      const res = await logout();
+      if (res.success) {
+        router.push("/");
+        setLoading(false);
+        setUser(null);
+      } else {
+        setLoading(false);
+        alert("Something Went Wrong");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
   if (!user) {
     return (

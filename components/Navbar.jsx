@@ -5,21 +5,7 @@ import { UserDataContext } from "@/context/UserContext";
 import axios from "axios";
 
 const Navbar = ({ onSignUpClick }) => {
-  const { user, setUser } = useContext(UserDataContext);
-  useEffect(() => {
-    const getUser = () => {
-      axios
-        .get("/api/check-auth")
-        .then((res) => {
-          console.log(res.data);
-          setUser(res.data.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
-  }, []);
+  const { user } = useContext(UserDataContext);
 
   return (
     <div className="text-slate-900 flex px-4">
@@ -56,7 +42,7 @@ const Navbar = ({ onSignUpClick }) => {
           ) : (
             <button onClick={onSignUpClick}>
               <UserIcon color="#222" />
-              <span className="">Profile</span>
+              <span className="">Login</span>
             </button>
           )}
           <Link href="/wishlist">

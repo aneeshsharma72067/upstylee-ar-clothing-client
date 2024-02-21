@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
-import SignUpModal from "@/components/SignUpModal";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import { UserDataContext } from "@/context/UserContext";
+import AuthInterfaceModal from "@/components/AuthInterfaceModal";
+import { checkIfUserLoggedIn } from "@/services/authentication";
 const App = ({ Component, pageProps }) => {
-  const { loading } = useContext(UserDataContext);
+  const { user, setUser, loading } = useContext(UserDataContext);
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [isReadyToClose, setIsReadyToClose] = useState(false);
   const openSignUpModal = () => {
@@ -18,10 +19,23 @@ const App = ({ Component, pageProps }) => {
     setIsReadyToClose(false);
   };
 
+  useEffect(() => {
+    const checkForUser = async () => {
+      const res = await checkIfUserLoggedIn();
+      if (res.user) {
+        setUser(res.user);
+      } else {
+        console.log(res);
+      }
+    };
+    checkForUser();
+    return () => {};
+  }, []);
+
   return (
     <div>
       {loading && <Loader />}
-      <SignUpModal isOpen={isSignUpModalOpen} onClose={closeSignUpModal} />
+      <AuthInterfaceModal isOpen={isSignUpModalOpen} />
       <div
         onClick={isReadyToClose ? closeSignUpModal : null}
         className="duration-500"
